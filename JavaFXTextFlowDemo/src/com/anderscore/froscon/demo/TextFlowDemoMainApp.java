@@ -12,6 +12,8 @@ import javafx.scene.Scene;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.Glow;
 import javafx.scene.effect.Reflection;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
@@ -52,7 +54,7 @@ public class TextFlowDemoMainApp extends Application {
 			text1.setFill(Color.DARKORANGE);
 			
 			// Optional: Ersetze text1 ("Open Source") durch entsprechendes piktogramm
-//			ImageView image = new ImageView(new Image(Main.class.getResourceAsStream("os.png")));
+//			ImageView image = new ImageView(new Image(TextFlowDemoMainApp.class.getResourceAsStream("os.png")));
 //			image.translateYProperty().setValue(10);
 				
 			Text text2 = new Text("ist ");
@@ -110,9 +112,9 @@ public class TextFlowDemoMainApp extends Application {
 	 */
 	@SuppressWarnings("unused")
 	private void addRotationEffect(Node node) {
-		RotateTransition rt = new RotateTransition(Duration.seconds(4), node);
+		RotateTransition rt = new RotateTransition(Duration.seconds(2), node);
         rt.setByAngle(360);
-        rt.setInterpolator(Interpolator.LINEAR);
+        rt.setInterpolator(Interpolator.EASE_BOTH);
         rt.setCycleCount(Animation.INDEFINITE);
         rt.play();
 	}
